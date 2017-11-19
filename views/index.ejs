@@ -1,0 +1,19 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Your Album</h1>
+        <div class="row">
+                <% album.forEach(function(catagory){ %>
+                <div class="item-block col-md-4">
+                    <div class="card">
+                        <img class="card-img-top item-img" src="<%= catagory.image %>">
+                        <div class="card-block">
+                            <a href='/album/<%= catagory.name %>'><h4 class="card-title"><%= catagory.name %></h4></a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer %>

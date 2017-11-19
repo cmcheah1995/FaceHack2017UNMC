@@ -1,0 +1,18 @@
+<% include ./partials/header %>
+    <div class="container">
+        <div class="row">
+            <div class="form-title">
+                <h1>Please Insert Photo</h1>
+            </div>
+            <div class="form-body">
+                <form action="/image/upload" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label>Photo</label>
+                        <input type="file" class="form-control" name="photo">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Upload photo">
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ./partials/footer %>

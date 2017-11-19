@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="card show-card">
+                <h1>Your Photo</h1>
+                <img src="/../../uploads/reco-test/test.jpg">
+                <div class="card-block">
+                    <% obj = returnJson.objects; %>
+                    <% people = []; %>
+                    <% obj.forEach(function(person){ %>
+                        <% if(person.faceAnnotation.recognitionConfidence > 0.7){ %>
+                            <% people.push(person.objectId); %>
+                        <% } %>
+                    <% }); %>
+                    <p class="card-text"><strong>Number of People</strong> <%= obj.length %></p>
+                    <p class="card-text"><strong>People Involve</strong> <%= people %></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer %>
